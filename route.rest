@@ -1,0 +1,33 @@
+GET http://localhost:3000/subscribers
+
+
+###
+
+GET http://localhost:9090/subscribers/5f3d03cf7fde170b34cb6197
+
+###
+
+POST http://localhost:9090/subscribers/
+Content-Type:/application/json
+
+{
+    "name":"Niyiragira Gerard",
+    "subscribedToChannel":"let us try this one"
+}
+
+
+###
+
+PATCH http://localhost:9090/subscribers
+
+###
+DELETE http://localhost:9090/subscribers/5f3d03cf7fde170b34cb6197/
+
+
+###
+PATCH http://localhost:9090/subscribers/5f3e48ac3db03b1b683c3ad9/
+Content-Type: application/json
+
+{
+    "name":"Izere Henry"
+}
