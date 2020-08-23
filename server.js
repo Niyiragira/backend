@@ -11,7 +11,10 @@ db.once("open",()=>console.log("Connected to database"))
 
 app.use(express.json())
 
-const subscribersRouter = require("./routes/subscribers")
-app.use("/subscribers",subscribersRouter)
+const subscribersRouter = require("./routes/blogs")
+const userRoutes=require("./routes/users")
+
+app.use("/blogs",subscribersRouter)
+app.use("/users",userRoutes)
 
 app.listen(3000,()=>console.log("Server Started"))

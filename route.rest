@@ -7,12 +7,12 @@ GET http://localhost:9090/subscribers/5f3d03cf7fde170b34cb6197
 
 ###
 
-POST http://localhost:9090/subscribers/
-Content-Type:/application/json
+POST http://localhost:3000/users/signup
+Content-Type:application/json
 
 {
-    "name":"Niyiragira Gerard",
-    "subscribedToChannel":"let us try this one"
+    "email":"tesy@gmail.com",
+    "password":"tes1234"
 }
 
 
