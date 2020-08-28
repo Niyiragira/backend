@@ -1,16 +1,19 @@
 const express=require("express")
 const router=express.Router();
-const Subscriber =require("../models/subscriber");
+const Blog =require("../models/subscriber");
 const subscriber = require("../models/subscriber");
 
 //Gett all users
 router.get("/", async(req,res)=>{
     try{
-        const subscribers=await Subscriber.find()
+        const subscribers=await Blog.find()
         res.json(subscribers)
     } catch (err){
         res.status(500).json({message:err.message})
     }
+})
+router.get("test",(req,res,next)=>{
+    res.render("test",{title:req.body.id})
 })
 //Get one subscriber
 router.get("/:id",getSubscriber,(req,res)=>{
@@ -21,7 +24,7 @@ router.get("/:id",getSubscriber,(req,res)=>{
 router.post("/",async (req,res)=>{
 
     try{
-    const data = Subscriber({
+    const data = Blog({
         title:req.body.title,
         content:req.body.content
     })
@@ -62,7 +65,7 @@ router.delete("/:id",getSubscriber,async (req,res)=>{
 async function getSubscriber(req,res,next){
     let subscriber;
     try{
-        subscriber=await Subscriber.findById(req.params.id)
+        subscriber=await Blog.findById(req.params.id)
         if(subscriber==null){
             return res.status(404).json({message:"Cannot find article"})
         }
